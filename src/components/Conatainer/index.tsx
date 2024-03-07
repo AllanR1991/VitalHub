@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import Constants from "expo-constants";
 
 export interface ContainerMarginProps {
   $margin?: string;
@@ -35,6 +34,7 @@ export const Container = styled.View<ContainerMarginProps>`
     $justContent !== undefined ? `${$justContent}` : "center"};
   align-items: ${({ $alingItens }) =>
     $alingItens !== undefined ? `${$alingItens}` : "center"};
+  background-color: #FAFAFA;
 `;
 
 export const ContainerMargin = styled.View<ContainerMarginProps>`
@@ -47,7 +47,7 @@ export const ContainerMargin = styled.View<ContainerMarginProps>`
   gap: ${({ $gap }) => ($gap !== undefined ? `${$gap}px` : "0px")};
   flex-direction: ${({ $fd }) => ($fd !== undefined ? `${$fd}` : "column")};
   width: ${({ $width }) => ($width !== undefined ? `${$width}` : "90%")};
-  height: ${({ $height }) => ($height !== undefined ? `${$height}` : "100%")};
+  height: ${({ $height }) => ($height !== undefined ? `${$height}` : "auto")};
   justify-content: ${({ $justContent }) =>
     $justContent !== undefined ? `${$justContent}` : "center"};
   align-items: ${({ $alingItens }) =>
