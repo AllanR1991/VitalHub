@@ -1,4 +1,8 @@
+import { StatusBar } from "react-native";
 import styled from "styled-components/native";
+
+const heigthStatusBar = StatusBar.currentHeight;
+console.log(heigthStatusBar);
 
 export interface ContainerMarginProps {
   $margin?: string;
@@ -31,11 +35,35 @@ export interface ContainerMarginProps {
 export const Container = styled.View<ContainerMarginProps>`
   flex:1;
   justify-content: ${({ $justContent }) =>
-    $justContent !== undefined ? `${$justContent}` : "center"};
+    $justContent !== undefined ? `${$justContent}` : "start"};
   align-items: ${({ $alingItens }) =>
     $alingItens !== undefined ? `${$alingItens}` : "center"};
   background-color: #FAFAFA;
 `;
+
+export const ContainerSafeArea = styled.SafeAreaView<ContainerMarginProps>`
+
+flex-basis:content;
+padding: ${({ $pd }) => ($pd !== undefined ? $pd : "0px")};
+  margin: ${({ $margin }) => ($margin !== undefined ? $margin : "0px")};
+  margin-top: ${({ $mt }) => ($mt !== undefined ? `${$mt}px` : `${heigthStatusBar}px`)};
+  margin-bottom: ${({ $mb }) => ($mb !== undefined ? `${$mb}px` : "0px")};
+  margin-left: ${({ $ml }) => ($ml !== undefined ? `${$ml}px` : "0px")};
+  margin-right: ${({ $mr }) => ($mr !== undefined ? `${$mr}px` : "0px")};
+  gap: ${({ $gap }) => ($gap !== undefined ? `${$gap}px` : "0px")};
+  flex-direction: ${({ $fd }) => ($fd !== undefined ? `${$fd}` : "column")};
+  width: ${({ $width }) => ($width !== undefined ? `${$width}` : "100%")};
+  height: ${({ $height }) => ($height !== undefined ? `${$height}` : "auto")};
+  justify-content: ${({ $justContent }) =>
+    $justContent !== undefined ? `${$justContent}` : "center"};
+  align-items: ${({ $alingItens }) =>
+    $alingItens !== undefined ? `${$alingItens}` : "center"};
+  background-color: ${({ $bgColor }) =>
+    $bgColor !== undefined ? `${$bgColor}` : "transparente"};
+  border-radius: ${({ $borderRadius }) =>
+    $borderRadius !== undefined ? `${$borderRadius}px` : "0px"};
+  
+`
 
 export const ContainerMargin = styled.View<ContainerMarginProps>`
   padding: ${({ $pd }) => ($pd !== undefined ? $pd : "0px")};
