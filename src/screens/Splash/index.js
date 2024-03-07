@@ -6,6 +6,7 @@ import { HeartAnimated } from "../../components/HeartAnimeted/style";
 import { TextSlogan } from "../../components/Texts/style";
 
 export default function Splash({ navigation }) {
+  // Este processo faz um reset no navigation e depois vai para rota designada de tela apos 4 segundos.    
   useEffect(() => {
     setTimeout(() => {
       navigation.dispatch(CommonActions.reset({
@@ -16,7 +17,7 @@ export default function Splash({ navigation }) {
   })
   return (
     <Container>
-
+      
       <LinearGradienteSplash />
 
       <LogoBrandWhite />
