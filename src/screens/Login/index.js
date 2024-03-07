@@ -1,18 +1,25 @@
+import { SafeAreaView, StatusBar } from "react-native";
 import { BrandLogoBlue } from "../../components/BrandLogo/style";
 import { ButtonDefault, ButtonGoogle } from "../../components/Buttons";
-import { Container, ContainerMargin } from "../../components/Conatainer";
+import { ContainerMargin, ContainerSafeArea, ContainerScrollView } from "../../components/Conatainer";
 import { InputGreen } from "../../components/Inputs/styled";
-import { LinkGray } from "../../components/Links";
-import { Title } from "../../components/Texts/style";
+import { LinkBlueLigth, LinkGray } from "../../components/Links";
+import { TextGrayDark, Title } from "../../components/Texts/style";
 
 
-export default function Login() {
-  return (
-    <Container>
+export default function Login({
+  navigation
+}) {
+  return (      
+    <ContainerSafeArea style={{justifyContent:"center", alignItems:"center"}}>
+      
+      <StatusBar translucent={true} barStyle="dark-content" backgroundColor={'transparent'} currentHeight/>
+
 
       <ContainerMargin $mb={25}>
         <BrandLogoBlue />
       </ContainerMargin>
+      <ContainerScrollView>
       <Title>Entrar ou criar conta</Title>
       <ContainerMargin $gap={15} $mt={20} $mb={10}>
         <InputGreen
@@ -31,15 +38,19 @@ export default function Login() {
         />
       </ContainerMargin>
 
-      <LinkGray>Esqueceu sua senha?</LinkGray>
+      <LinkGray onPress={() => {navigation.navigate('RecoveryPassWord')}}>Esqueceu sua senha?</LinkGray>
 
       <ContainerMargin $mt={42} $gap={15} $mb={30}>
         <ButtonDefault textButton="Entrar" />
         <ButtonGoogle textButton="Entrar com google"/>
       </ContainerMargin>
 
-
-    </Container>
+      <ContainerMargin $fd="row" $mb={30}>
+        <TextGrayDark>Não tem conta? </TextGrayDark>
+        <LinkBlueLigth onPress={()=>{}}>Crie uma conta agora!</LinkBlueLigth>
+      </ContainerMargin>
+      </ContainerScrollView>
+    </ContainerSafeArea>
 
 
   )
