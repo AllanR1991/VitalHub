@@ -16,7 +16,7 @@ export default function Splash({ navigation }) {
     }, 4000);
   })
   return (
-    <Container>
+    <Container $justContent="center">
       
       <LinearGradienteSplash />
 
