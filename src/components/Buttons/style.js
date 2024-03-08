@@ -15,3 +15,11 @@ export const ButtonGoogleStyle = styled(ButtonBlueStyle)`
   justify-content:center;
   gap:27px;
 `
+
+export const ButtonIcon = styled.TouchableOpacity`
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:30px;
+  height:30px;
+`
