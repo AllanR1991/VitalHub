@@ -1,12 +1,10 @@
-import { ContainerHeader } from "../Conatainer"
+import { ContainerHeader, ContainerMargin } from "../Conatainer"
 import { ImageUser } from "../Images/style"
+import { TextNameUser, TitleHeader } from "../Texts/style"
 import { LinearGradienteHeader } from "./style"
+import { Ionicons } from '@expo/vector-icons';
 
-const Dados = [
-  {id:1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin'},
-  {id:2, nome: 'Carlos', email: 'carlos@carlos.com', senha: 'user', image: 'https://github.com/Carlos-Augusto-Roque.png', typeUser: 'paciente'},
-  {id:3, nome: 'Evelin', email: 'evelin@evelin.com', senha: 'user', image: 'https://github.com/evy-oliveira0807.png', typeUser: 'paciente'},
-]
+
 
 
 export const Header = (
@@ -15,10 +13,20 @@ export const Header = (
   }
 ) => {
 
-  return(
+  return (
     <ContainerHeader>
       <LinearGradienteHeader>
-        <ImageUser source={{uri: 'https://github.com/AllanR1991.png'}}/>
+        <ContainerMargin $fd="row" $justContent="space-between" $width="100%" $pd="62px 20px 22px 20px">
+          <ContainerMargin $fd="row" $gap={10} $width="auto">
+            <ImageUser source={{ uri: 'https://github.com/AllanR1991.png' }} />
+            <ContainerMargin $alingItens="flex-start" $justContent="flex-start" $width="auto" $gap={3}>
+              <TitleHeader>Bem vindo!</TitleHeader>
+              <TextNameUser>Allan</TextNameUser>
+            </ContainerMargin>
+          </ContainerMargin>
+
+          <Ionicons name="notifications" size={24} color="white" />
+        </ContainerMargin>
       </LinearGradienteHeader>
     </ContainerHeader>
   )
