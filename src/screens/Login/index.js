@@ -5,7 +5,11 @@ import { Container, ContainerMargin, ContainerSafeArea, ContainerScrollView } fr
 import { InputGreen } from "../../components/Inputs/styled";
 import { LinkBlueLigth, LinkGray } from "../../components/Links";
 import { TextGrayDark, Title } from "../../components/Texts/style";
-
+const Dados = [
+  { id: 1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' },
+  { id: 2, nome: 'Carlos', email: 'carlos@carlos.com', senha: 'user', image: 'https://github.com/Carlos-Augusto-Roque.png', typeUser: 'paciente' },
+  { id: 3, nome: 'Evelin', email: 'evelin@evelin.com', senha: 'user', image: 'https://github.com/evy-oliveira0807.png', typeUser: 'paciente' },
+]
 
 export default function Login({
   navigation
@@ -30,6 +34,7 @@ export default function Login({
             keyboardType="email-address"
             inputMode="email"
             maxLength={50}
+            value="allan@allan.com"
           />
 
           <InputGreen
@@ -39,6 +44,7 @@ export default function Login({
             inputMode="text"
             maxLength={50}
             secureTextEntry={true}
+            value="admin"
           />
         </ContainerMargin>
 
