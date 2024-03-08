@@ -1,5 +1,12 @@
 import styled from "styled-components/native"
 
+export const Description = styled.Text`
+  font-family: 'Quicksand_500Medium';
+  font-size: 16px;
+  color: #5F5C6B;
+  text-align: center;
+`
+
 export const TextSlogan = styled.Text`
   font-family: 'Quicksand_600SemiBold';
   color: #fff;
@@ -34,9 +41,3 @@ export const TextButtonGoogle = styled(TextButtonBlue)`
 `
 
 
-export const Description = styled.Text`
-  font-family: 'Quicksand_500Medium';
-  font-size: 16px;
-  color: #5F5C6B;
-  text-align: center;
-`
