@@ -9,7 +9,7 @@ export const LinkGray = styled.Text`
   text-align:left;
   
   color: #8C8A97;
-  padding: 4px 0px;
+  padding: 8px 0px;
 `
 
 export const LinkBlueLigth = styled.Text`
@@ -17,5 +17,15 @@ export const LinkBlueLigth = styled.Text`
   font-family:'MontserratAlternates_600SemiBold';
   color: #4D659D;
   text-decoration: underline;
-  padding: 4px 0px;
+  padding: 8px 0px;
+`
+
+export const LinkUnderlineDefault  = styled(LinkBlueLigth)`
+  color: #344F8F;
+`
+
+export const LinkBlueMedium = styled(LinkBlueLigth)`
+  font-size:16px;
+  color: #496BBA ;
+  text-decoration: none;
 `
