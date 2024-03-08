@@ -1,5 +1,5 @@
 import LottieView from "lottie-react-native";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import HeartRed from "../../assets/images/heartRed.json"
 
 export const HeartAnimated = styled(LottieView).attrs({
