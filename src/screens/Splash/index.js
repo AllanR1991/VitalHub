@@ -4,9 +4,10 @@ import { Container, ContainerMargin } from "../../components/Conatainer";
 import { LinearGradienteSplash, LogoBrandWhite } from "./style";
 import { HeartAnimated } from "../../components/HeartAnimeted/style";
 import { TextSlogan } from "../../components/Texts/style";
+import { StatusBar } from "react-native";
 
 export default function Splash({ navigation }) {
-  // Este processo faz um reset no navigation e depois vai para rota designada de tela apos 4 segundos.    
+  //Este processo faz um reset no navigation e depois vai para rota designada de tela apos 4 segundos.    
   useEffect(() => {
     setTimeout(() => {
       navigation.dispatch(CommonActions.reset({
@@ -16,9 +17,12 @@ export default function Splash({ navigation }) {
     }, 4000);
   })
   return (
-    <Container $justContent="center">
-      
-      <LinearGradienteSplash />
+    <Container
+      $justContent="center"
+    >
+      <StatusBar translucent={true} barStyle="light-content" backgroundColor={'transparent'} currentHeight />
+
+      <LinearGradienteSplash >
 
       <LogoBrandWhite />
 
@@ -29,6 +33,7 @@ export default function Splash({ navigation }) {
       <TextSlogan>
         Ajudando você a cuidar da sua saúde!
       </TextSlogan>
+      </LinearGradienteSplash>
     </Container>
   )
 }
