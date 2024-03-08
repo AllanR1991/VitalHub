@@ -3,12 +3,11 @@ import styled from "styled-components/native";
 
 
 export const LinearGradienteSplash = styled(LinearGradient).attrs({
-  colors:['#49B3BA', '#496BBA']  
+  colors:['#49B3BA', '#496BBA'] ,
 })`
-  position: absolute;
-  left: 0px;
-  right:0px;
-  top:0px;
+  justify-content:center;
+  align-items:center; 
+  width:100%;   
   height:100%;
 `
 
