@@ -2,12 +2,12 @@ import styled from "styled-components/native";
 
 
 export const InputGreen = styled.TextInput.attrs({
-  // placeholderTextColor: '#34898F',
-  // autoCapitalize: "none",
-  // autoCorrect: false,
-  // clearButtonMode: "while-editing",
-  // cursorColor: '#34898F',
-  // enablesReturnKeyAutomatically: true,
+  placeholderTextColor: '#34898F',
+  autoCapitalize: "none",
+  autoCorrect: false,
+  clearButtonMode: "while-editing",
+  cursorColor: '#34898F',
+  enablesReturnKeyAutomatically: true,
 })`
   padding:16px;
   width:100%;
