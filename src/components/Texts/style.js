@@ -7,6 +7,12 @@ export const Description = styled.Text`
   text-align: center;
 `
 
+export const TitleHeader = styled(Description)`
+  font-size: 14px;
+  text-align: left;
+  color: #4E4B59;
+`
+
 export const TextSlogan = styled.Text`
   font-family: 'Quicksand_600SemiBold';
   color: #fff;
@@ -27,6 +33,10 @@ export const TextGrayDark = styled.Text`
   color: #4E4B59;
 `
 
+export const TextNameUser = styled(TextGrayDark)`
+  font-size: 16px;
+  color: #FBFBFB;
+`
 
 export const TextButtonBlue = styled.Text`
   font-family: 'MontserratAlternates_700Bold';
