@@ -14,7 +14,7 @@ export default function Home() {
 
   const [showModalCancel, setShowModalCancel] = useState(false);
   const [showModalMedicalRecord, setShowModalMedicalRecord] = useState(false);
-  const [consultSelect, setConsultSelect] = useState(null);
+  const [consultSelect, setConsultSelect] = useState({});
   // const [dataTest, setDataTeste] = useState(dataPacient);
 
   const statusConsult = ['Agendadas', 'Realizadas', 'Canceladas'];
@@ -22,11 +22,11 @@ export default function Home() {
   const dataPacient = [
     { id: 1, name: 'Allan Rodrigues dos Santos', age: 32, email: 'allan@allan.com', timeConsult: '15:00', typeConsult: 'Exame', statusConsult: 'Realizadas', photo: 'https://github.com/AllanR1991.png' },
     { id: 2, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
-    { id: 3, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
-    { id: 4, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
-    { id: 5, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
-    { id: 6, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
-    { id: 7, name: 'Everton Araujo', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
+    { id: 3, name: 'Teste 1', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
+    { id: 4, name: 'Teste 2', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
+    { id: 5, name: 'Teste 3', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
+    { id: 6, name: 'Teste 4', age: 35, email: 'eveton@everton.com', timeConsult: '12:00', typeConsult: 'Rotina', statusConsult: 'Agendadas', photo: 'https://github.com/Evertonaraujo88.png' },
+    { id: 7, name: 'Evelyn Oliveira', age: 19, email: 'evelin@evelin.com', timeConsult: '08:00', typeConsult: 'Urgência', statusConsult: 'Realizadas', photo: 'https://github.com/evy-oliveira0807.png' },
     { id: 8, name: 'Kamille Milo', age: 20, email: 'kamille@kamille.com', timeConsult: '13:00', typeConsult: 'Exame', statusConsult: 'Canceladas', photo: 'https://github.com/KamiMilo.png' }
   ]
 
@@ -47,7 +47,7 @@ export default function Home() {
         ))}
       </ContainerMargin>
 
-      <ContainerMargin $mt={24}>
+      <Container style={{width:'90%', marginTop:30}}>
         <FlatList
           data={dataPacient}
           renderItem={({ item }) =>
@@ -67,9 +67,7 @@ export default function Home() {
           }}
           showsVerticalScrollIndicator={false}
         />
-
-
-      </ContainerMargin>
+      </Container>
 
       <ModalCancel
         consultSelect={consultSelect}
