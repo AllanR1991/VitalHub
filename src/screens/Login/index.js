@@ -56,8 +56,8 @@ export default function Login({
         <LinkGray onPress={() => { navigation.navigate('RecoveryPassWord') }}>Esqueceu sua senha?</LinkGray>
 
         <ContainerMargin $mt={42} $gap={15} $mb={30}>
-          <ButtonDefault textButton="Entrar" />
-          <ButtonGoogle textButton="Entrar com google" />
+          <ButtonDefault textButton="Entrar" onPress={()=> navigation.navigate('Home')}/>
+          <ButtonGoogle textButton="Entrar com google" onPress={()=> navigation.navigate('Home')}/>
         </ContainerMargin>
 
         <ContainerMargin $fd="row" $mb={30} >
