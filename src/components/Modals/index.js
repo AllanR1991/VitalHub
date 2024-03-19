@@ -101,8 +101,7 @@ export const ModalMedicalRecord = ({
   setShowModalMedicalRecord,
   showModalMedicalRecord,
 }) => {
-  console.log('medicalk ', consultSelect)
-  
+    
   return (
     <Modal
       transparent={true}
