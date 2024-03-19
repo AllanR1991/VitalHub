@@ -5,8 +5,13 @@ import { Container, ContainerMargin, ContainerSafeArea, ContainerScrollView } fr
 import { InputGreen } from "../../components/Inputs/styled";
 import { LinkBlueLigth, LinkGray } from "../../components/Links";
 import { TextGrayDark, Title } from "../../components/Texts/style";
-const Dados = [
-  { id: 1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' },
+const DataMedico = [
+  { id: 1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' , idade: 12, crm: 'CRM/SP 123456', funcao: ['Demartologia', 'Esteticista'], dataNascimento: '13/08/1991', cpf:12345678912, endereco: 'Rua Oswaldo Stuchi, 120', cep: '09791770', cidade:'Moema', estado: 'sp' },
+  { id: 2, nome: 'Everton', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' , idade: 12, crm: 'CRM/SP 123456', funcao: ['Demartologia', 'Esteticista'], dataNascimento: '13/08/1991', cpf:12345678912, endereco: 'Rua Oswaldo Stuchi, 120', cep: '09791770', cidade:'Moema', estado: 'sp' },
+]
+
+const DataPaciente = [
+  { id: 1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' , idade: 12, crm: 'CRM/SP 123456', funcao: ['Demartologia', 'Esteticista'] },
   { id: 2, nome: 'Carlos', email: 'carlos@carlos.com', senha: 'user', image: 'https://github.com/Carlos-Augusto-Roque.png', typeUser: 'paciente' },
   { id: 3, nome: 'Evelin', email: 'evelin@evelin.com', senha: 'user', image: 'https://github.com/evy-oliveira0807.png', typeUser: 'paciente' },
 ]
