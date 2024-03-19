@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const ButtonBlueStyle = styled.TouchableOpacity`
   width: 100%;
@@ -22,4 +22,21 @@ export const ButtonIcon = styled.TouchableOpacity`
   left:0px;
   width:30px;
   height:30px;
+`
+export const ButtonSelectStyle = styled(ButtonBlueStyle)`
+  ${({ selectStatus }) => {
+    if (selectStatus) {
+      return css`
+        border:none;
+        background-color: #496BBA;      
+      `
+    }else{
+      return css`
+        background-color: #FBFBFB;
+        border: 2px solid #607EC5;
+      `
+    }
+  }}
+  width:30%;
+  
 `
