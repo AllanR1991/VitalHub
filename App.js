@@ -9,6 +9,7 @@ import CheckEmail from "./src/screens/CheckEmail";
 import NewPassword from "./src/screens/NewPassword";
 import CreateAccount from "./src/screens/CreateAccount";
 import Home from "./src/screens/Home";
+import MedicalRecord from "./src/screens/MedicalRecord";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +32,7 @@ export default function App() {
     <NavigationContainer>
 
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="MedicalRecord"
         screenOptions={{headerShown:false}}
       >
 
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Screen name='NewPassword' component={NewPassword} />
         <Stack.Screen name='CreateAccount' component={CreateAccount} />
         <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='MedicalRecord' component={MedicalRecord} />
 
       </Stack.Navigator>
       
