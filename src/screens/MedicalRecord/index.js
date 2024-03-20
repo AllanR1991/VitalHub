@@ -6,6 +6,7 @@ import { TextLabel, TextQuickSandRegular, Title } from "../../components/Texts/s
 import { InputGreen, InputGreenMultiLine } from "../../components/Inputs/styled"
 import { ButtonDefault } from "../../components/Buttons"
 import { LinkUnderlineDefault } from "../../components/Links"
+import { Stethoscope } from "../../components/Stethoscope"
 
 export default MedicalRecord = ({
   navigation,
@@ -58,11 +59,13 @@ export default MedicalRecord = ({
       <ContainerMargin $mt={30} $gap={30} $mb={30}>
           <ButtonDefault textButton="Salvar" />
 
-          <ButtonDefault textButton="kiss" />
+          <ButtonDefault textButton="Editar" />
 
           <LinkUnderlineDefault onPress={()=> {navigation.replace('Home')}}>Cancelar</LinkUnderlineDefault>
         </ContainerMargin>
       </ContainerScrollView>
+
+     
     </Container>
   )
 }
