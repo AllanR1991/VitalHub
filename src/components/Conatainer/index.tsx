@@ -29,18 +29,34 @@ export interface ContainerMarginProps {
   $height?: string;
   $bgColor?: "";
   $borderRadius?: number;
-  $clickButton?: boolean;
 }
 
-export const Container = styled.View<ContainerMarginProps>`
+interface ContainerProps {
+  $justContent?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
+  $alingItens?: "flex-start" | "flex-end" | "center" | "stretch" | "baseline";
+  $pdT?: number;
+  $bgColor?: "";
+}
+
+export const Container = styled.View<ContainerProps>`
   flex: 1;
   justify-content: ${({ $justContent }) =>
     $justContent !== undefined ? `${$justContent}` : "start"};
   align-items: ${({ $alingItens }) =>
     $alingItens !== undefined ? `${$alingItens}` : "center"};
-  padding-top: ${({ $mt }) => ($mt !== undefined ? `${$mt}px` : `0px`)};
+  padding-top: ${({ $pdt }) => ($pdt !== undefined ? `${$pdt}px` : `0px`)};
   background-color: ${({ $bgColor }) => ($bgColor !== undefined ? `${$bgColor}` : '#FAFAFA')};
 `;
+
+export const ContainerMarginStatusBar = styled(Container)`
+  padding-top: ${({ $mt }) => $mt !== undefined ? `${$mt}px` : `${heigthStatusBar}px`};
+`
 
 export const ContainerSafeArea = styled.SafeAreaView<ContainerMarginProps>`
   flex-basis: content;
@@ -86,7 +102,18 @@ export const ContainerMargin = styled.View<ContainerMarginProps>`
     $borderRadius !== undefined ? `${$borderRadius}px` : "0px"};
 `;
 
-export const ContainerScrollView = styled.ScrollView.attrs<ContainerMarginProps>(
+interface ContainerScrollViewProps {
+  $margin?: string;
+  $mt?: number;
+  $mb?: number;
+  $ml?: number;
+  $mr?: number;
+  $gap?: number;
+  $fd?: string;
+  $width?: string;
+}
+
+export const ContainerScrollView = styled.ScrollView.attrs<ContainerScrollViewProps>(
   (props) => ({
     contentContainerStyle: {
       justifyContent: props.$justContent || "center",
