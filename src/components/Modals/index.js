@@ -97,6 +97,7 @@ export const ModalCancel = ({
 }
 
 export const ModalMedicalRecord = ({
+  navigation,
   consultSelect,
   setShowModalMedicalRecord,
   showModalMedicalRecord,
@@ -138,6 +139,7 @@ export const ModalMedicalRecord = ({
           <ContainerMargin $mt={30} $mb={20} $gap={30} $width="80%">
             <ButtonDefault textButton="Inserir prontuário" onPress={() => {
               setShowModalMedicalRecord(false)
+              navigation.navigate('MedicalRecord',consultSelect);
             }} />
 
             <LinkUnderlineDefault onPress={() => {
