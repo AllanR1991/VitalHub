@@ -36,13 +36,18 @@ export const TextLabel = styled.Text`
   font-size: 16px;
 `
 
+export const TextLabelBlack = styled(TextLabel)`
+  color: #000;
+  font-size: 14px;
+`
+
 export const TextTime = styled.Text`
-  ${({selectStatus}) => {
-    if(selectStatus){
+  ${({ selectStatus }) => {
+    if (selectStatus) {
       return css`
         color: #49B3BA;
       `
-    }else{
+    } else {
       return css`
         color: #4E4B59;
       `
@@ -93,6 +98,17 @@ export const TextSelect = styled(TextNameUserWhite)`
   }}
   font-size: 12px; 
   text-align:center;
+`
+
+export const TextSelectGreen = styled(TextSelect)`
+${({ selectStatus }) => {
+    if (!selectStatus) {
+      return css`
+        color: #34898F;      
+      `
+    }
+  }}
+  font-size:14px;
 `
 
 
