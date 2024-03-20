@@ -8,7 +8,11 @@ import { useState } from "react";
 import CardAppointment from "../../components/CardAppointment";
 import { ModalCancel, ModalMedicalRecord } from "../../components/Modals";
 
-export default function Home() {
+export default function Home(
+  {
+    navigation
+  }
+) {
 
   const [select, setSelect] = useState('Agendadas');
 
@@ -76,6 +80,7 @@ export default function Home() {
         showModalCancel={showModalCancel}
       />
       <ModalMedicalRecord
+        navigation={navigation}
         consultSelect={consultSelect}
         setShowModalMedicalRecord={setShowModalMedicalRecord}
         showModalMedicalRecord={showModalMedicalRecord}
