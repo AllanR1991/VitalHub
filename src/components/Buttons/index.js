@@ -1,5 +1,5 @@
-import { TextButtonBlue, TextButtonGoogle, TextNotSelect, TextSelect } from "../Texts/style"
-import { ButtonBlueStyle, ButtonGoogleStyle, ButtonNotSelectStyle, ButtonSelectStyle } from "./style"
+import { TextButtonBlue, TextButtonGoogle, TextNotSelect, TextSelect, TextSelectGreen } from "../Texts/style"
+import { ButtonBlueStyle, ButtonGoogleStyle, ButtonNotSelectStyle, ButtonSelectGreenStyle, ButtonSelectStyle } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 
 export const ButtonDefault = ({
@@ -41,3 +41,14 @@ export const ButtonSelect = ({
   )
 }
 
+export const ButtonSelectGreen = ({
+  onPress,
+  texto,
+  selectStatus
+}) => {
+  return(
+    <ButtonSelectGreenStyle selectStatus={selectStatus} onPress={onPress}>
+      <TextSelectGreen selectStatus={selectStatus}>{texto}</TextSelectGreen>
+    </ButtonSelectGreenStyle>
+  )
+}
