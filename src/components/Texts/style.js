@@ -30,6 +30,12 @@ export const TextSlogan = styled.Text`
   width:203px;
 `
 
+export const TextLabel = styled.Text`
+  font-family: 'Quicksand_600SemiBold';
+  color: #33303E;
+  font-size: 16px;
+`
+
 export const TextTime = styled.Text`
   ${({selectStatus}) => {
     if(selectStatus){
