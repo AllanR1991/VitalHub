@@ -40,3 +40,19 @@ export const ButtonSelectStyle = styled(ButtonBlueStyle)`
   width:30%;
   
 `
+
+export const ButtonSelectGreenStyle = styled(ButtonSelectStyle)`
+  ${({ selectStatus }) => {
+    if (selectStatus) {
+      return css`
+        border:none;
+        background-color: #60BFC5;      
+      `
+    }else{
+      return css`
+        background-color: #FBFBFB;
+        border: 2px solid #60BFC5;
+      `
+    }
+  }}
+`
