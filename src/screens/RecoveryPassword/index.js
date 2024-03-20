@@ -1,6 +1,6 @@
 
 import { BrandLogoBlue } from "../../components/BrandLogo/style";
-import { Container, ContainerMargin, ContainerSafeArea, ContainerScrollView } from "../../components/Conatainer";
+import { Container, ContainerMargin, ContainerMarginStatusBar, ContainerSafeArea, ContainerScrollView } from "../../components/Conatainer";
 import { StatusBar } from "react-native";
 import { Description, Title } from "../../components/Texts/style";
 import { InputGreen } from "../../components/Inputs/styled";
@@ -12,7 +12,7 @@ export default function RecoveryPassWord({
   navigation
 }) {
   return (
-    <Container>
+    <ContainerMarginStatusBar>
 
       <StatusBar translucent={true} barStyle="dark-content" backgroundColor={'transparent'} currentHeight />
 
@@ -46,6 +46,6 @@ export default function RecoveryPassWord({
 
       </ContainerScrollView>
 
-    </Container>
+    </ContainerMarginStatusBar>
   )
 } 

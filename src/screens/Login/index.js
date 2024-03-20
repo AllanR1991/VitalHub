@@ -1,10 +1,11 @@
-import { SafeAreaView, ScrollView, StatusBar } from "react-native";
+import {StatusBar} from "react-native";
 import { BrandLogoBlue } from "../../components/BrandLogo/style";
 import { ButtonDefault, ButtonGoogle } from "../../components/Buttons";
-import { Container, ContainerMargin, ContainerSafeArea, ContainerScrollView } from "../../components/Conatainer";
+import { Container, ContainerMargin, ContainerMarginStatusBar, ContainerSafeArea, ContainerScrollView } from "../../components/Conatainer";
 import { InputGreen } from "../../components/Inputs/styled";
 import { LinkBlueLigth, LinkGray } from "../../components/Links";
 import { TextGrayDark, Title } from "../../components/Texts/style";
+
 const DataMedico = [
   { id: 1, nome: 'Allan Rodrigues dos Santos', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' , idade: 12, crm: 'CRM/SP 123456', funcao: ['Demartologia', 'Esteticista'], dataNascimento: '13/08/1991', cpf:12345678912, endereco: 'Rua Oswaldo Stuchi, 120', cep: '09791770', cidade:'Moema', estado: 'sp' },
   { id: 2, nome: 'Everton', email: 'allan@allan.com', senha: 'admin', image: 'https://github.com/AllanR1991.png', typeUser: 'admin' , idade: 12, crm: 'CRM/SP 123456', funcao: ['Demartologia', 'Esteticista'], dataNascimento: '13/08/1991', cpf:12345678912, endereco: 'Rua Oswaldo Stuchi, 120', cep: '09791770', cidade:'Moema', estado: 'sp' },
@@ -23,7 +24,7 @@ export default function Login({
 
     // <ContainerSafeArea style={{ justifyContent: "center", alignItems: "center" }}>
     // Com safeArea o ScrollView esta com comportamento indevido.
-    <Container>
+    <ContainerMarginStatusBar>
       <StatusBar translucent={true} barStyle="dark-content" backgroundColor={'transparent'} />
 
 
@@ -65,7 +66,7 @@ export default function Login({
           <LinkBlueLigth onPress={() => { navigation.navigate('CreateAccount') }}>Crie uma conta agora!</LinkBlueLigth>
         </ContainerMargin>
       </ContainerScrollView>
-    </Container>
+    </ContainerMarginStatusBar>
     // </ContainerSafeArea>
 
 
