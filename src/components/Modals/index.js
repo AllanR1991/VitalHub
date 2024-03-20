@@ -1,10 +1,11 @@
-import { Modal, Text, View } from "react-native"
-import { Container, ContainerMargin } from "../Conatainer"
-import { Description, TextQuickSandRegular, Title } from "../Texts/style"
-import { ButtonDefault } from "../Buttons"
+import { KeyboardAvoidingView, Modal, Platform, Text, View } from "react-native"
+import { Container, ContainerMargin, ContainerScrollView } from "../Conatainer"
+import { Description, TextLabel, TextLabelBlack, TextQuickSandRegular, Title } from "../Texts/style"
+import { ButtonDefault, ButtonSelectGreen } from "../Buttons"
 import { LinkUnderlineDefault } from "../Links"
 import * as Notifications from 'expo-notifications'
 import { ImageUser } from "../Images/style"
+import { InputGreen } from "../Inputs/styled"
 
 
 Notifications.requestPermissionsAsync();
@@ -102,7 +103,7 @@ export const ModalMedicalRecord = ({
   setShowModalMedicalRecord,
   showModalMedicalRecord,
 }) => {
-    
+
   return (
     <Modal
       transparent={true}
@@ -115,7 +116,7 @@ export const ModalMedicalRecord = ({
         $bgColor="rgba(0,0,0,0.3)"
       >
         <ContainerMargin
-          $width="90%"          
+          $width="90%"
           $borderRadius={10}
           $bgColor="#FFF"
         >
@@ -139,7 +140,7 @@ export const ModalMedicalRecord = ({
           <ContainerMargin $mt={30} $mb={20} $gap={30} $width="80%">
             <ButtonDefault textButton="Inserir prontuário" onPress={() => {
               setShowModalMedicalRecord(false)
-              navigation.navigate('MedicalRecord',consultSelect);
+              navigation.navigate('MedicalRecord', consultSelect);
             }} />
 
             <LinkUnderlineDefault onPress={() => {
@@ -152,5 +153,68 @@ export const ModalMedicalRecord = ({
         </ContainerMargin>
       </Container>
     </Modal>
+  )
+}
+
+export const ModalScheduleAppointment = ({
+
+}) => {
+  return (
+    <Modal
+      transparent={true}
+      visible={true}
+      statusBarTranslucent={true}
+      onRequestClose={() => {}}
+      propagateSwipe={true}
+    >
+          <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex:1, justifyContent:'flex-end'}}
+        >
+
+      <Container
+        $width='100%'
+        $bgColor="rgba(0,0,0,0.3)"
+        $justContent="flex-end"
+      >
+
+        <ContainerMargin
+          $width="100%"
+          $bgColor="#FFF"
+
+          style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+        >
+
+            <ContainerMargin $mt={30}>
+              <Title>Agendar consulta</Title>
+            </ContainerMargin>
+
+            <ContainerMargin $mt={17} $width="80%" $alingItens="flex-start">
+              <TextLabelBlack>Qual o nível da consulta</TextLabelBlack>
+
+              <ContainerMargin $fd="row" $justContent="space-between" $mt={10} $width="100%">
+                <ButtonSelectGreen texto={'Rotina'} />
+                <ButtonSelectGreen texto={'Exame'} />
+                <ButtonSelectGreen texto={'Urgência'} />
+              </ContainerMargin>
+            </ContainerMargin>
+
+            <ContainerMargin $width="80%" $mt={20} $alingItens="flex-start">
+              <TextLabelBlack>Informe a localização desejada</TextLabelBlack>
+              <InputGreen placeholder="Informe a localização"></InputGreen>
+            </ContainerMargin>
+
+            <ContainerMargin $mt={143} $mb={35} $gap={30} $width="80%">
+              <ButtonDefault textButton="Inserir prontuário" />
+
+              <LinkUnderlineDefault>
+                Cancelar
+              </LinkUnderlineDefault>
+            </ContainerMargin>
+        </ContainerMargin>
+      </Container>
+      </KeyboardAvoidingView>
+    </Modal>
+
   )
 }
