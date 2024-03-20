@@ -21,6 +21,14 @@ export const InputGreen = styled.TextInput.attrs({
 
 `
 
+export const InputGreenMultiLine = styled(InputGreen).attrs({
+  multiline:true,
+  textAlignVertical: "top"  
+})`
+  height:121px;
+
+`
+
 export const InputGreenCode = styled.TextInput.attrs({
   placeholderTextColor: '#34898F',  
   autoCapitalize: "none",
