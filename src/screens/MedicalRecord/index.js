@@ -4,6 +4,8 @@ import { Container, ContainerMargin, ContainerScrollView } from "../../component
 import { ImageUser } from "../../components/Images/style"
 import { TextLabel, TextQuickSandRegular, Title } from "../../components/Texts/style"
 import { InputGreen, InputGreenMultiLine } from "../../components/Inputs/styled"
+import { ButtonDefault } from "../../components/Buttons"
+import { LinkUnderlineDefault } from "../../components/Links"
 
 export default MedicalRecord = ({
   navigation,
@@ -29,7 +31,7 @@ export default MedicalRecord = ({
           {name}
         </Title>
       </ContainerMargin>
-      <ContainerMargin $width="80%" $mt={18} $fd="row" $justContent="space-around">
+      <ContainerMargin $width="80%" $mt={18} $mb={24} $fd="row" $justContent="space-around">
         <TextQuickSandRegular>
           {age}
         </TextQuickSandRegular>
@@ -38,20 +40,28 @@ export default MedicalRecord = ({
         </TextQuickSandRegular>
       </ContainerMargin>
 
-      <ContainerMargin $alingItens="flex-start">
+      <ContainerMargin $alingItens="flex-start" $gap={10}>
         <TextLabel>Descrição da consulta</TextLabel>
         <InputGreenMultiLine placeholder="Descrição"/>
       </ContainerMargin>
 
-      <ContainerMargin $alingItens="flex-start">
+      <ContainerMargin $alingItens="flex-start" $gap={10} $mt={20}>
         <TextLabel>Diagnóstico do paciente</TextLabel>
         <InputGreen placeholder="Diagnóstico"/>
       </ContainerMargin>
 
-      <ContainerMargin $alingItens="flex-start">
+      <ContainerMargin $alingItens="flex-start" $gap={10} $mt={20}>
         <TextLabel>Prescrição médica</TextLabel>
         <InputGreenMultiLine placeholder="Prescrição medica"/>
       </ContainerMargin>      
+
+      <ContainerMargin $mt={30} $gap={30} $mb={30}>
+          <ButtonDefault textButton="Salvar" />
+
+          <ButtonDefault textButton="kiss" />
+
+          <LinkUnderlineDefault onPress={()=> {navigation.replace('Home')}}>Cancelar</LinkUnderlineDefault>
+        </ContainerMargin>
       </ContainerScrollView>
     </Container>
   )
