@@ -56,3 +56,35 @@ export const ButtonSelectGreenStyle = styled(ButtonSelectStyle)`
     }
   }}
 `
+
+export const ButtonStethoscope = styled.TouchableOpacity`
+  position: absolute;
+  bottom: ${`${56+15}px`};
+  right: 21px; 
+  background-color: #49B3BA;
+  width: 60px;
+  height: 60px;
+  align-items:center;
+  justify-content:center;
+  border-radius: 7px;
+  
+`
+
+export const ButtonClinic = styled(ButtonBlueStyle)`
+	flex-direction: column;
+	width: 100%;
+	background-color: #ffffff;
+	padding: 18px;
+	margin-bottom: 12px;
+	border-radius: 5px;
+  elevation:2;
+
+	${(props) =>
+		props.$clickButton != undefined && props.$clickButton == true
+			? css`
+					border: 2px solid #496bba;
+			  `
+			: css`
+					border: none;
+			  `}
+`;
