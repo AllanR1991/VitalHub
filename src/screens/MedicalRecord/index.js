@@ -8,10 +8,10 @@ import { ButtonDefault } from "../../components/Buttons"
 import { LinkUnderlineDefault } from "../../components/Links"
 import { Stethoscope } from "../../components/Stethoscope"
 
-export default MedicalRecord = ({
+export default  function MedicalRecord ({
   navigation,
   route
-}) => {
+}) {
 
   const {name, age, email, photo} = route.params
 
