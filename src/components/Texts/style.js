@@ -41,6 +41,18 @@ export const TextLabelBlack = styled(TextLabel)`
   font-size: 14px;
 `
 
+export const TextGrade = styled(TextLabel)`
+  color: #F9A620;
+`
+
+export const TextAdress = styled(TextGrade)`
+  color: #4E4B59;
+`
+
+export const TextWeek = styled(TextAdress)`
+  color: #49B3BA;
+`
+
 export const TextTime = styled.Text`
   ${({ selectStatus }) => {
     if (selectStatus) {
@@ -71,6 +83,9 @@ export const Title = styled.Text`
   font-family:'MontserratAlternates_600SemiBold';
   font-size: 20px;
   color: #33303E;
+`
+export const TitleCard = styled(Title)`
+  font-size:16px;
 `
 
 export const TextGrayDark = styled.Text`
