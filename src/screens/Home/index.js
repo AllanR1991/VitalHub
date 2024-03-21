@@ -19,6 +19,7 @@ export default function Home(
 
   const [showModalCancel, setShowModalCancel] = useState(false);
   const [showModalMedicalRecord, setShowModalMedicalRecord] = useState(false);
+  const [showModalScheduleAppointment, setShowModalScheduleAppointment] = useState(false);
   const [consultSelect, setConsultSelect] = useState({});
   // const [dataTest, setDataTeste] = useState(dataPacient);
 
@@ -74,7 +75,10 @@ export default function Home(
         />
       </Container>
 
-      <Stethoscope/>
+      <Stethoscope
+        onPress={()=>setShowModalScheduleAppointment(true)}
+        
+      />
 
       <ModalCancel
         consultSelect={consultSelect}
@@ -89,7 +93,10 @@ export default function Home(
         showModalMedicalRecord={showModalMedicalRecord}
       />
 
-      <ModalScheduleAppointment/>
+      <ModalScheduleAppointment
+        setShowModalScheduleAppointment={setShowModalScheduleAppointment}
+        showModalScheduleAppointment={showModalScheduleAppointment}
+      />
 
     </Container>
 
