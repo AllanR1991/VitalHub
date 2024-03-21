@@ -6,6 +6,7 @@ import { LinkUnderlineDefault } from "../Links"
 import * as Notifications from 'expo-notifications'
 import { ImageUser } from "../Images/style"
 import { InputGreen } from "../Inputs/styled"
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 Notifications.requestPermissionsAsync();
@@ -157,33 +158,36 @@ export const ModalMedicalRecord = ({
 }
 
 export const ModalScheduleAppointment = ({
-
+  setShowModalScheduleAppointment,
+  showModalScheduleAppointment
 }) => {
   return (
     <Modal
       transparent={true}
-      visible={true}
+      visible={showModalScheduleAppointment}
       statusBarTranslucent={true}
-      onRequestClose={() => {}}
+      onRequestClose={() => { setShowModalScheduleAppointment(false) }}
       propagateSwipe={true}
     >
-          <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={{ flex:1, justifyContent:'flex-end'}}
-        >
-
-      <Container
-        $width='100%'
-        $bgColor="rgba(0,0,0,0.3)"
-        $justContent="flex-end"
+      <KeyboardAwareScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        enableOnAndroid={true}
+        // extraScrollHeight={100}
+        showsVerticalScrollIndicator={false}
       >
 
-        <ContainerMargin
-          $width="100%"
-          $bgColor="#FFF"
-
-          style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+        <Container
+          $width='100%'
+          $bgColor="rgba(0,0,0,0.3)"
+          $justContent="flex-end"
         >
+
+          <ContainerMargin
+            $width="100%"
+            $bgColor="#FFF"
+
+            style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+          >
 
             <ContainerMargin $mt={30}>
               <Title>Agendar consulta</Title>
@@ -204,16 +208,20 @@ export const ModalScheduleAppointment = ({
               <InputGreen placeholder="Informe a localização"></InputGreen>
             </ContainerMargin>
 
+            
+
             <ContainerMargin $mt={143} $mb={35} $gap={30} $width="80%">
               <ButtonDefault textButton="Inserir prontuário" />
 
-              <LinkUnderlineDefault>
+              <LinkUnderlineDefault
+                onPress={()=> setShowModalScheduleAppointment(false)}
+              >
                 Cancelar
               </LinkUnderlineDefault>
             </ContainerMargin>
-        </ContainerMargin>
-      </Container>
-      </KeyboardAvoidingView>
+          </ContainerMargin>
+        </Container>
+      </KeyboardAwareScrollView>
     </Modal>
 
   )
