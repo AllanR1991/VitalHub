@@ -9,6 +9,8 @@ import CheckEmail from "./src/screens/CheckEmail";
 import NewPassword from "./src/screens/NewPassword";
 import CreateAccount from "./src/screens/CreateAccount";
 import Home from "./src/screens/Home";
+
+import SelectClinic from "./src/screens/SelectClinic";
 import MedicalRecord from "./src/screens/MedicalRecord";
 
 const Stack = createNativeStackNavigator();
@@ -32,18 +34,19 @@ export default function App() {
     <NavigationContainer>
 
       <Stack.Navigator
-        initialRouteName="Splash"
+        initialRouteName="SelectClinic"
         screenOptions={{headerShown:false}}
       >
 
-        <Stack.Screen name='Splash' component={Splash} />
-        <Stack.Screen name='Login' component={Login} />
-        <Stack.Screen name='RecoveryPassWord' component={RecoveryPassWord} />
-        <Stack.Screen name='CheckEmail' component={CheckEmail} />
-        <Stack.Screen name='NewPassword' component={NewPassword} />
-        <Stack.Screen name='CreateAccount' component={CreateAccount} />
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='MedicalRecord' component={MedicalRecord} />
+        <Stack.Screen name='Splash' component={Splash}/>
+        <Stack.Screen name='Login' component={Login}/>
+        <Stack.Screen name='RecoveryPassWord' component={RecoveryPassWord}/>
+        <Stack.Screen name='CheckEmail' component={CheckEmail}/>
+        <Stack.Screen name='NewPassword' component={NewPassword}/>
+        <Stack.Screen name='CreateAccount' component={CreateAccount}/>
+        <Stack.Screen name='Home' component={Home}/>
+        <Stack.Screen name='MedicalRecord' component={MedicalRecord}/>
+        <Stack.Screen name='SelectClinic' component={SelectClinic}/>
 
       </Stack.Navigator>
       
